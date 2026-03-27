@@ -1,26 +1,64 @@
 # UrbanEats Docker Project
 
 ## Overview
-This project demonstrates a multi-container application using Docker Compose.
+
+This project demonstrates a multi-container application using Docker Compose. It includes a frontend web service, backend API, database, cache, message queue, and reverse proxy.
+
+---
 
 ## Services
-- Web (Frontend)
-- API (Backend)
-- PostgreSQL (Database)
-- Redis (Cache)
-- RabbitMQ (Queue)
-- Nginx (Reverse Proxy)
 
-## How to Run
+* **Web (Frontend)** → Port 80 (via Nginx)
+* **API (Backend)** → Port 4000 (internal)
+* **PostgreSQL (Database)** → Port 5432
+* **Redis (Cache)** → Port 6379
+* **RabbitMQ (Queue)** → Port 15672 (management UI)
+* **Nginx (Reverse Proxy)** → Port 80
 
-1. Install Docker Desktop
-2. Download project files
-3. Run:
-   docker compose up -d --build
+---
 
-4. Open browser:
-   http://localhost
+## How to Run the Project
+
+### 1. Install Docker Desktop
+
+Make sure Docker Desktop is installed and running.
+
+### 2. Clone the repository
+
+git clone https://github.com/2naligaming2002/urbaneats-docker.git
+cd urbaneats-docker
+
+### 3. Start the application
+
+docker compose up -d --build
+
+---
+
+## Access the Application
+
+Web App:
+http://localhost
+
+API:
+http://localhost/api
+
+RabbitMQ Dashboard:
+http://localhost:15672
+
+Login:
+Username: admin
+Password: admin
+
+---
 
 ## Notes
-- .env file is not included for security
-- .env.example is provided as a template
+
+* The `.env` file is NOT included for security reasons.
+* Use `.env.example` as a template if needed.
+* All services run in a Docker network and communicate internally.
+
+---
+
+## Author
+
+Manish Neupane
